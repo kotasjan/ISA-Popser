@@ -16,37 +16,37 @@ Následující instrukce vám poslouží k instalaci a spuštění projektu na l
 1. Naklonujte si repozitář na své lokální úložiště.
 2. Pomocí terminálu vstupte do složky s projektem.
 3. Spusťte překlad projektu do binární podoby pomocí "make".
+	``` shell
 	make
+	```
 4. Nyní je program připraven na spuštění.
 
 ## Spuštění serveru
 
 1. Přepněte se do privilegovaného režimu.
+	``` shell
 	su
+	```
 2. Použijte jednu ze tří možností spuštění programu:
+	``` shell
 	./popser -h
 	./popser -r
 	./popser [-a PATH] [-d PATH] [-p PORT] [-c] [-r]
+	```
 
 ### Popis přepínačů
 
--a	cesta k souboru s přihlašovacími údaji
--d	cesta do složky s emaily (Maildir)
--p	číslo portu, na kterém poběží server
--h	volitelný parametr, program vypíše nápovědu a ukončí se
--r	volitelný parametr, 
--c	volitelný parametr, při zadání server akceptuje autentizační metodu, která přenáší heslo v 		nešifrované podobě
+`-a` cesta k souboru s přihlašovacími údaji<br />
+`-d` cesta do složky s emaily (Maildir)<br />
+`-p` číslo portu, na kterém poběží server<br />
+`-h` volitelný parametr, program vypíše nápovědu a ukončí se<br />
+`-r` volitelný parametr, <br />
+`-c` volitelný parametr, při zadání server akceptuje autentizační metodu, která přenáší heslo v 		nešifrované podobě<br />
 
 ## Autor
 
-* **Jan Kotas** - *Initial work* - [kotasjn](https://github.com/kotasjn)
+* **Jan Kotas** - [kotasjn](https://github.com/kotasjn)
 
 ## Licence
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-
-## Acknowledgments
-
-* Hat tip to anyone who's code was used
-* Inspiration
-* etc
+Tento projekt je licencován licencí MIT. Tu si můžete prohlédnout zde: [LICENSE.md](LICENSE.md) file for details
