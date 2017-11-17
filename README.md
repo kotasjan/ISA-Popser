@@ -3,7 +3,7 @@
 Popser je studentský projekt do předmětu ISA pro rok 2017. Cílem tohoto projektu bylo vytvořit funkční POP3 server, který bude vycházet z oficiálního protokolu RFC 1939 + doplněný o požadavky od zadavatele projektu.
 
 ## Úvodem
-
+Implementovány jsou všechny funkce protokolu POP3 včetně příkazu TOP.
 Následující instrukce vám poslouží k instalaci a spuštění projektu na lokálním PC.
 
 ### Požadavky
@@ -42,6 +42,24 @@ su
 `-h` volitelný parametr, program vypíše nápovědu a ukončí se<br />
 `-r` volitelný parametr, <br />
 `-c` volitelný parametr, při zadání server akceptuje autentizační metodu, která přenáší heslo v 		nešifrované podobě<br />
+
+## Soubory
+`popser.cpp`
+`server.cpp`
+`client.cpp`
+`thread.cpp`
+`email.cpp`
+`md5.cpp`
+
+`popser.h`
+`server.h`
+`client.h`
+`thread.h`
+`email.h`
+`md5.h`
+`common.h`
+
+`Makefile`
 
 ## Autor
 
