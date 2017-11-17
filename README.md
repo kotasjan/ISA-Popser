@@ -16,23 +16,23 @@ Následující instrukce vám poslouží k instalaci a spuštění projektu na l
 1. Naklonujte si repozitář na své lokální úložiště.
 2. Pomocí terminálu vstupte do složky s projektem.
 3. Spusťte překlad projektu do binární podoby pomocí "make".
-	``` shell
-	make
-	```
+``` shell
+make
+```
 4. Nyní je program připraven na spuštění.
 
 ## Spuštění serveru
 
 1. Přepněte se do privilegovaného režimu.
-	``` shell
-	su
-	```
+``` shell
+su
+```
 2. Použijte jednu ze tří možností spuštění programu:
-	``` shell
-	./popser -h
-	./popser -r
-	./popser [-a PATH] [-d PATH] [-p PORT] [-c] [-r]
-	```
+``` shell
+./popser -h
+./popser -r
+./popser [-a PATH] [-d PATH] [-p PORT] [-c] [-r]
+```
 
 ### Popis přepínačů
 
