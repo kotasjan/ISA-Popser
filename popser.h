@@ -1,3 +1,10 @@
+/*
+ *  Subject: ISA 2017/2018
+ *  Program: Popser
+ *  Author: Jan Kotas, xkotas07
+ *	License: MIT (More info in LICENSE.md)
+*/
+
 #ifndef __XPOPSER_H
 #define __XPOPSER_H
 
@@ -5,7 +12,10 @@
 #include "thread.h"
 #include "server.h"
 
-using namespace std;
+/*
+ * Hlavičkový soubor pro soubor popser.cpp. Obsahuje kromě prototypů
+ * funkcí i strukturu, která uchovává hodnoty přijatých argumentů.
+*/
 
 void load_right_user();
 void check_path_to_files();

@@ -1,3 +1,15 @@
+/*
+ *  Subject: ISA 2017/2018
+ *  Program: Popser
+ *  Author: Jan Kotas, xkotas07
+ *	License: MIT (More info in LICENSE.md)
+*/
+
+/*
+ * Hlavičkový soubor common.h sdružuje konstanty a knihovny společné pro všechny
+ * ostatní části projektu.
+*/
+
 #include <iostream>
 #include <fstream>
 #include <sstream>

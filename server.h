@@ -1,3 +1,10 @@
+/*
+ *  Subject: ISA 2017/2018
+ *  Program: Popser
+ *  Author: Jan Kotas, xkotas07
+ *  License: MIT (More info in LICENSE.md)
+*/
+
 #ifndef _server_h_
 #define _server_h_
 
@@ -7,6 +14,9 @@
 #include "email.h"
 #include "md5.h"
 
+/*
+ * Hlavičkový soubor třídy Server.
+*/
 
 class Server {
  private:
@@ -21,18 +31,18 @@ class Server {
   int server_sock, client_sock;
   struct sockaddr_in serverAddr, clientAddr;
   char buff[256];
-  
+
   pid_t pid;
 
  public:
   Server();
   void AcceptAndDispatch();
-  static void* HandleClient(void *args);
+  static void* HandleClient(void* args);
 
  private:
-  static int FindClientIndex(Client *c);
+  static int FindClientIndex(Client* c);
   static void Respond(Client* c, string request);
-  static void SendData(Client* c, const char * data);
+  static void SendData(Client* c, const char* data);
   static void CloseClient(Client* c);
   static void AddNewEmails(Client* c);
   static void CurrentEmails(Client* c);
@@ -51,7 +61,6 @@ class Server {
   static void STAT(Client* c);
   static void TOP(Client* c, string request);
   static void UIDL(Client* c, string request);
-
 };
 
 #endif

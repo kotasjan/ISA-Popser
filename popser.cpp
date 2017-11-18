@@ -1,8 +1,8 @@
 /*
-  Subject: ISA 2017/2018
-  Program: Popser
-  Author: Jan Kotas, xkotas07
-  License: MIT (More info in LICENSE.md)
+ *  Subject: ISA 2017/2018
+ *  Program: Popser
+ *  Author: Jan Kotas, xkotas07
+ *  License: MIT (More info in LICENSE.md)
 */
 
 #include "popser.h"
@@ -30,7 +30,6 @@ string Server::maildirPath;
 */
 
 void help() {
-
   cout << "NAME" << endl;
   cout << "\tpopser" << endl;
   cout << "\n" << endl;
@@ -45,13 +44,18 @@ void help() {
   cout << "\t-a\tset path to authentication file with user data" << endl;
   cout << "\t-d\tset path to maildir" << endl;
   cout << "\t-p\tset port number" << endl;
-  cout << "\t-c\tuse this if you want to use nonencrypted method of authentication" << endl;
+  cout << "\t-c\tuse this if you want to use nonencrypted method of "
+          "authentication"
+       << endl;
   cout << "\n" << endl;
   cout << "AUTHOR" << endl;
   cout << "\tWritten by Jan Kotas as a student project for ISA." << endl;
   cout << "\n" << endl;
   cout << "COPYRIGHT" << endl;
-  cout << "\tCopyright © 2017 MIT (for more info visit LICENSE.md)\n\tThis  is free software: you are free to change and redistribute it.  There is NO WARRANTY, to the extent permitted by law." << endl;
+  cout << "\tCopyright © 2017 MIT (for more info visit LICENSE.md)\n\tThis  is "
+          "free software: you are free to change and redistribute it.  There "
+          "is NO WARRANTY, to the extent permitted by law."
+       << endl;
   cout << "\n" << endl;
 
   exit(0);
@@ -72,14 +76,13 @@ void error(string errorMessage) {
  * Fuknce signal_handler() je volána v případě, že byl server předčasně ukončen.
  * V takovém případě je potřeba zajistit, že nejdojde k nekonzistenci dat náhlým
  * ukončením a všechny změny dokončené klienty budou úspěšně dokončeny. Z toho
- * důvodu jsem využil mutex pro případ, že by se klient nacházel ve fázi, kdy 
+ * důvodu jsem využil mutex pro případ, že by se klient nacházel ve fázi, kdy
  * přistupuje k datům.
 */
 
 void signal_handler(int signal_value) {
   Thread::LockMutex();
-  if (signal_value)
-  exit(signal_value);
+  if (signal_value) exit(signal_value);
   Thread::UnlockMutex();
 }
 
@@ -132,8 +135,7 @@ void loadParams(int argc, char* argv[]) {
     }
   }
 
-  if(count != (argc - 1))
-    error("ERROR: Invalid argument.");
+  if (count != (argc - 1)) error("ERROR: Invalid argument.");
 
   if (argc == 2 && par.resetFlag == 1)
     par.runMode = 0;
@@ -161,13 +163,11 @@ void loadParams(int argc, char* argv[]) {
     check_path_to_files();
   }
 
-  if(par.port == 0)
-    error("ERROR: Missing -p (port) argument");
+  if (par.port == 0) error("ERROR: Missing -p (port) argument");
 
   if (par.resetFlag) reset();
 
-  if (par.runMode == 0)
-    exit(0);
+  if (par.runMode == 0) exit(0);
 }
 
 /*
@@ -205,8 +205,7 @@ void reset() {
           ofstream outfile((newDir + string(ent->d_name)).c_str());
           string content;
 
-          for (int i = 0; infile.eof() != true; i++)
-            content += infile.get();
+          for (int i = 0; infile.eof() != true; i++) content += infile.get();
 
           content.erase(content.end() - 1);
 
@@ -232,8 +231,8 @@ void reset() {
 }
 
 /*
- * Funkce load_right_user() slouží k parsování souboru s přihlašovacími údaji uživatele.
- * Výstupem je poté přihlašovací jméno klienta a jeho heslo.
+ * Funkce load_right_user() slouží k parsování souboru s přihlašovacími údaji
+ * uživatele. Výstupem je poté přihlašovací jméno klienta a jeho heslo.
 */
 
 void load_right_user() {
@@ -242,7 +241,7 @@ void load_right_user() {
   ifstream auth_file(par.authFile);
 
   if (auth_file.is_open()) {
-    if (!getline(auth_file, line)){
+    if (!getline(auth_file, line)) {
       error("ERROR: cannot read authentication file\n");
     }
 
@@ -252,7 +251,7 @@ void load_right_user() {
 
     // cout << "DEBUG: Right username: " << right_username << "\n" << endl;
 
-    if (!getline(auth_file, line)){
+    if (!getline(auth_file, line)) {
       error("ERROR: cannot read authentication file\n");
     }
 
@@ -270,7 +269,8 @@ void load_right_user() {
 }
 
 /*
- * Fukce kontrolující cestu k Maildiru. Při úspěchu zapisuje cestu do souboru path.txt.
+ * Fukce kontrolující cestu k Maildiru. Při úspěchu zapisuje cestu do souboru
+ * path.txt.
 */
 
 void check_path_to_files() {
@@ -299,8 +299,6 @@ int main(int argc, char* argv[]) {
   signal(SIGINT, signal_handler);
 
   loadParams(argc, argv);
-
-  // cout << "Server is running!" << endl;
 
   Server* server;
 

@@ -1,8 +1,8 @@
 /*
-	Subject: ISA 2017/2018
-	Program: Popser
-	Author: Jan Kotas, xkotas07
-	License: MIT (More info in LICENSE.md)
+ *  Subject: ISA 2017/2018
+ *  Program: Popser
+ *  Author: Jan Kotas, xkotas07
+ *	License: MIT (More info in LICENSE.md)
 */
 
 #include "client.h"
@@ -40,23 +40,21 @@ void Client::SetHash(string myString, string right_password) {
  * zjistit, zda se klient nachází v transakční fázi.
 */
 
-bool Client::isInTransactionPhase(){
-	if(this -> transaction) return true;
-	else return false;
+bool Client::isInTransactionPhase() {
+  if (this->transaction)
+    return true;
+  else
+    return false;
 }
 
 /*
  * Getter getHash() vrací hash vytvořený funkcí SetHash().
-*/ 
+*/
 
-string Client::getHash() {
-	return this->hash;
-}
+string Client::getHash() { return this->hash; }
 
 /*
  * Getter vracící ID klienta.
 */
 
-int Client::getID(){
-	return this->id;
-}
+int Client::getID() { return this->id; }

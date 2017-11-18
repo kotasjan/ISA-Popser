@@ -1,7 +1,18 @@
+/*
+ *  Subject: ISA 2017/2018
+ *  Program: Popser
+ *  Author: Jan Kotas, xkotas07
+ *  License: MIT (More info in LICENSE.md)
+*/
+
 #ifndef _thread_h_
 #define _thread_h_
 
 #include "common.h"
+
+/*
+ * Hlavičkový soubor třídy Thread.
+*/
 
 class Thread {
  public:
