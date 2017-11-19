@@ -40,7 +40,7 @@ su
 `-d` cesta do složky s emaily (Maildir)<br />
 `-p` číslo portu, na kterém poběží server<br />
 `-h` volitelný parametr, program vypíše nápovědu a ukončí se<br />
-`-r` volitelný parametr, <br />
+`-r` volitelný parametr, program provede reset serveru a ukončí se<br />
 `-c` volitelný parametr, při zadání server akceptuje autentizační metodu, která přenáší heslo v 		nešifrované podobě<br />
 
 ## Soubory
