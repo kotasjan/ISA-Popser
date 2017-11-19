@@ -63,8 +63,8 @@ int Thread::InitMutex() {
 }
 
 /*
- * Funkce LockMutex() blokuje přístup k mutexu do doby,
- * než je mutex odemčen funkcí UnlockMutex().
+ * Funkce LockMutex() žádá o přístup k mutexu a vlákno, které funkci
+ * volá, musí čekat do doby, než je mutex odemčen jiným vláknem.
 */
 
 int Thread::LockMutex() {
@@ -102,8 +102,9 @@ int Thread::InitTransaction() {
 }
 
 /*
- * Funkce LockTransaction() blokuje přístup do transakční fáze
- * do doby, než je odemčena funkcí UnlockTransaction().
+ * Funkce LockTransaction() žádá o přístup do transakční fáze.
+ * Vlákno čeká 3 sekundy na přístup k zámku a pokud jej nedostane,
+ * funkce je ukončena neúspěchem a musí být volána opětovně.
 */
 
 int Thread::LockTransaction() {
